@@ -1,68 +1,8 @@
-# import cv2
-# import parinya
-# from machine import Pin
-# import time
-# import numpy as np 
-# 
-# cap = VideoCapture(0)
-# sensor = 
-# yolo=parinya.YOLOv3(‘coco.names.txt’,’yolov3-tiny.cfg ’,’yolov3-tiny.weights’)
-# Green light_Pin=Pin(14,Pin_OUT)
-# Yellow light_Pin=Pin(23,Pin_OUT)
-# Red light_Pin=Pin(27,Pin_OUT)
-# Crossgreen light_Pin=Pin(11,Pin_OUT)
-# crossred light_Pin=Pin(17,Pin_OUT)
-# Buzzer = machine.Pin(23, machine.Pin.OUT)
-# Line_detect=cv2.pointPolygonTest(np.array(area1, np.int32), (int(cx), int(cy)), false)
-# 
-# While True:
-#     _, frame = cap.read
-#     yolo.detect(frame)
-#     grayframe= cv2.cvtColour(frame, cv2.COLOR_BGR2GRAY)
-#     Crossred light_Pin.Value(1)
-#     Green light_Pin.value(1)
-#     if sensor==1:
-#         Buzzer.duty(50)
-#         time.sleep(1)
-#         Buzzer.duty(0)
-#         Crossred light_Pin.Value(1)
-#         Green light_Pin.value(0)
-#         Yellow light_Pin.Value(1)
-#         Time.sleep(5)
-#         if result >= 0:
-#                 red light_Pin.value(1)
-#                 crossred light_Pin.value(1)
-#                 Elif result<0:
-#                 red light_Pin.value(1)
-#                 time.sleep(60)
-#                 Buzzer.duty(50)
-#                 Time.sleep(1)
-#                 Buzzer.duty(0)
-#                 time.sleep(2)
-#                 Buzzer.duty(50)
-#                 Time.sleep(1)
-#                 Buzzer.duty(0)
-#                 crossgreen light_Pin.value(1)
-#                 time.sleep(60)
-#                 cv2.imshow(‘frame’, frame)
-#                 if cv2.waitKey(1):
-#                     break
-# 
-# 
-#     else sensor==0:
-#         break
-# 
-# 
-# cap.release()
-# cv2.destroyAllWindows()
-
-
 #Import package 
 import RPi.GPIO as GPIO
 import time
 import numpy
 import machine
-import signal
 
 #set variable
 vid_detect = cv2.VideoCapture(0)
@@ -119,7 +59,3 @@ vidfile.release()
 
 vid_detect.release()
 cv2.destroyAllWindows
-
-
-                
-
