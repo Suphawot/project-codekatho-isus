@@ -3,6 +3,7 @@ import parinya
 from machine import Pin
 import time
 import numpy as np 
+import distancesensor
 
 cap = VideoCapture(0)
 sensor = ultrasonic.distance_cm()
@@ -28,7 +29,7 @@ While True:
     grayframe= cv2.cvtColour(frame, cv2.COLOR_BGR2GRAY)
     Crossred light_Pin.value(1)
     Green light_Pin.value(1)
-    if sensor >= 10:
+    if sensor <= 5:
         buzzer.duty(512)
         time.sleep(1)
         buzzer.duty(0)
